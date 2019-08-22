@@ -9,14 +9,14 @@ script:
   - docker run -e CI=true stephengrider/react-test npm run test -- --coverage
 
 after_success:
-  - docker build -t stephengrider/multi-client ./client
-  - docker build -t stephengrider/multi-nginx ./nginx
-  - docker build -t stephengrider/multi-server ./server
-  - docker build -t stephengrider/multi-worker ./worker
+  - docker build -t brunopiaui/multi-client ./client
+  - docker build -t brunopiaui/multi-nginx ./nginx
+  - docker build -t brunopiaui/multi-server ./server
+  - docker build -t brunopiaui/multi-worker ./worker
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   
-  - docker push stephengrider/multi-client
-  - docker push stephengrider/multi-nginx
-  - docker push stephengrider/multi-server
-  - docker push stephengrider/multi-worker
+  - docker push brunopiaui/multi-client
+  - docker push brunopiaui/multi-nginx
+  - docker push brunopiaui/multi-server
+  - docker push brunopiaui/multi-worker
