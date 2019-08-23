@@ -11,7 +11,7 @@
     {
       "name": "server",
       "image": "brunopiaui/multi-server",
-      "hostname": "server",
+      "hostname": "api",
       "essential": false,
       "memory": 128
     },
